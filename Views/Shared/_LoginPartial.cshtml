@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="header__account-block">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="header__account-logged">
+            <a class="account_logged-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+        </li>
+        <li class="header__account-logged">
+            <form class="header__account-logout" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="account_btn-logout">Logout</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="header__account-login">
+            <a class="account__login-link" asp-area="Identity" asp-page="/Account/Login">Sign in</a>
+        </li>
+        <li class="header__account-login">
+            <a class="account__login-link" asp-area="Identity" asp-page="/Account/Register">Sign up</a>
+        </li>
+
+    }
+</ul>

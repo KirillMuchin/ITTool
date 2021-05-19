@@ -1,0 +1,16 @@
+@media screen and (max-width: 991px) {
+/* стили для больших планшетов - начало */
+
+}
+
+@media screen and (max-width: 767px) {
+/* стили для средних планшетов - начало */
+
+}
+
+@media screen and (max-width: 479px) {
+/* стили для телефонов - начало */
+    .container {
+        width: 100vw;
+    }
+}

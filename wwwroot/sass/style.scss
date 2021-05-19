@@ -1,0 +1,67 @@
+﻿@import "_vars.scss";
+@import "_libs.scss";
+@import "_fonts.scss";
+@import "_global.scss";
+.header {
+    background-color: #6953BC;
+}
+.header__account-row{
+    width:100%;
+    display:inline-flex;
+    justify-content:space-between;
+    margin-top:15px;
+}
+.logo{
+    margin-left:105px;
+}
+.header__links-row{
+    margin-left:105px;
+    margin-top:7px;
+}
+.header__account-login{
+    display:inline;
+    font-weight:600;
+}
+.header__account {
+    margin-right: 65px;
+    padding-top: 15px;
+}
+.account__login-link{
+    font-size:18px;
+    color:white;
+    margin-right:50px;
+}
+.header__links-link{
+    color:white;
+    margin-right:30px;
+    font-weight:700;
+}
+.footer {
+    background: linear-gradient(90deg, #4F38BE 27.72%, #6B1096 41.12%, #6B1096 59.02%, #4B3DC3 73.14%);
+    color: white;
+
+    a {
+        color: white;
+        margin-left:0;
+        margin-bottom:15px;
+    }
+    p{
+        margin-bottom:20px;
+        font-weight:600;
+    }
+    padding-top: 50px;
+    border-radius: 30% 30% 0 0;
+}
+.footer__inner{
+    width:100%;
+    display:inline-flex;
+    justify-content:space-between;
+    padding:0 30px;
+}
+.footer__ittool,
+.footer__more,
+.footer__links
+{
+    display:inline-flex;
+    flex-direction:column;
+}
