@@ -5,11 +5,16 @@
     <partial name="_LayoutHead.cshtml"/>
 </head>
 <body>
-    <section class="login">
-        <div class="container">
-            @RenderBody()
+<section class="login">
+    <div class="container">
+        <div class="login__logo">
+            <a class="logo login__logo" asp-controller="Home" asp-action="Index">
+                <img src="/img/logo.svg" alt="logo" class="logo-img"/>
+            </a>
         </div>
-    </section>
+        @RenderBody()
+    </div>
+</section>
 <partial name="_LayoutScript"/>
 @await RenderSectionAsync("Scripts", required: false)
 </body>

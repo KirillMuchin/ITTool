@@ -68,4 +68,66 @@
 .login {
     background: linear-gradient(270.06deg, #4A3EC4 0.09%, #6B1096 25.24%, #6B1096 72.56%, #4B3DC3 99.98%);
     min-height:100vh;
+    padding-bottom:20px;
+}
+
+.login__logo{
+    text-align:center;
+    margin-left:0;
+    padding-top:72px;
+    margin-bottom:90px;
+}
+.login__form {
+    text-align: center;
+    max-width: 550px;
+    margin: 0 auto;
+    form {
+        padding: 65px 75px 40px;
+        background-color: white;
+        border-radius:20px;
+        h4{
+            font-size:25px;
+            font-weight:600;
+            margin-bottom:75px;
+        }
+        label{
+            display:none;
+        }
+        span{
+            display:none;
+        }
+
+    }
+}
+.login__form-control{
+    margin-bottom:75px;
+    border:none;
+    border-bottom: 2px solid black;
+    width:400px;
+    outline:none;
+}
+
+.login__form-btn {
+    width: 400px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+}
+.login__form-forget {
+    margin-top: 50px;
+    font-size: 15px;
+    color: #A59898;
+}
+.login__form-register {
+    font-size: 15px;
+    color:white;
+    margin-top:30px;
+    a{
+        color:white;
+        font-weight:700;
+    }
 }
