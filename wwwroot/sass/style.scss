@@ -202,3 +202,67 @@ header {
     text-align:center;
     margin: 0 auto;
 }
+
+section.login {
+    text-align: center;
+    padding-bottom:50px;
+}
+div.login {
+    padding: 65px 75px 40px;
+    width: 550px;
+    margin: 70px auto 20px;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    text-align: center;
+
+    h4 {
+        font-size: 25px;
+        color: #0F121A;
+        font-weight: 600;
+        margin-bottom: 75px;
+    }
+
+    .login__form-control {
+        width: 400px;
+        margin-bottom: 75px;
+        border: none;
+        border-bottom: 2px solid #0F121A;
+    }
+
+    a, label, input {
+        color: #0F121A;
+    }
+
+    .remember_me{
+        margin-bottom:20px;
+    }
+}
+.login__form-btn {
+    background-color: #0F121A;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 13px 167px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 48px;
+}
+#forgot-passwor {
+    color: #A59898;
+    font-size:15px;
+}
+.register_login{
+    margin-top:30px;
+
+}
+
+.register__form-btn {
+    background-color: #0F121A;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 13px 41px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 48px;
+}

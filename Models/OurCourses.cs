@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 
 namespace ITToolTest.Models
 {
-    public class Course
+    public class OurCourses
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string FileName { get; set; }
+        public string Description { get; set; }
+        public int LessonsCount { get; set; }
+        public int Level { get; set; }
     }
 }

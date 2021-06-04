@@ -13,6 +13,6 @@ namespace ITToolTest.Data
             : base(options)
         {
         }
-        public DbSet<ITToolTest.Models.Course> Course { get; set; }
+        public DbSet<ITToolTest.Models.OurCourses> OurCourses { get; set; }
     }
 }
