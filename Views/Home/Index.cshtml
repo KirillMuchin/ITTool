@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<ITToolTest.Models.OurCourses>
+@{
     ViewData["Title"] = "Home Page";
     Layout = "_Layout";
 }
@@ -97,5 +98,21 @@
 <section class="main__courses" id="main__courses">
     <div class="container">
         <p class="main__courses-header">Наши курсы</p>
+        <div class="main__courses-inner">
+            @foreach (var e in Model)
+            {
+                <div class="main__courses-item">
+                    <a href="#" class="main__courses-link">
+                        <div class="courses__item-img"></div>
+                        <h2 class="courses__item-header">@Html.DisplayFor(x => e.Name)</h2>
+                        <h4 class="courses__item-subheader">@Html.DisplayFor(x => e.Description)</h4>
+                        <div class="courses__item-info">
+                            <p class="courses__item-lessons">Количество уроков:@Html.DisplayFor(x => e.LessonsCount)</p>
+                            <p class="courses__item-lvl">Сложность:@Html.DisplayFor(x => e.Level)</p>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
     </div>
 </section>

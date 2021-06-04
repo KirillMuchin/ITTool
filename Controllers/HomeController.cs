@@ -7,21 +7,26 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using SQLitePCL;
 
 namespace ITToolTest.Controllers
 {
     public class HomeController : Controller
     {
+        private OurCoursesController ourCoursesController;
+
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, OurCoursesController coursesController)
         {
             _logger = logger;
+            ourCoursesController = coursesController;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var dataCourses = ourCoursesController.GetData();
+            return View(dataCourses);
         }
 
 

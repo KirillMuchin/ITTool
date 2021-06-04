@@ -24,6 +24,7 @@ namespace ITToolTest
         // GET: OurCourses
         public async Task<IActionResult> Index()
         {
+
             return View(await _context.OurCourses.ToListAsync());
         }
 
@@ -150,6 +151,12 @@ namespace ITToolTest
         private bool OurCoursesExists(int id)
         {
             return _context.OurCourses.Any(e => e.Id == id);
+        }
+
+        public List<OurCourses> GetData()
+        {
+            var data = _context.OurCourses.ToList();
+            return data;
         }
     }
 }

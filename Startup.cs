@@ -35,6 +35,7 @@ namespace ITToolTest
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+            services.AddScoped<OurCoursesController>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
