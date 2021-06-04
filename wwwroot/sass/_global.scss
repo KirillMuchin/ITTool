@@ -1,48 +1,59 @@
-html{
+html {
     box-sizing: border-box;
     scroll-behavior: smooth;
+    background-color: #0F121A;
 }
 
 *,
 *::after,
-*::before{
+*::before {
     box-sizing: inherit;
-    
+    font-family: 'Montserrat', sans-serif;
+    color: #DFE0E2;
 }
 
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: PF Bulletin Sans Pro;
+    font-style: normal;
+    font-weight: 500;
 }
 
-#rework{
+#rework {
     display: none;
 }
 
-a{
+a {
     text-decoration: none;
+    color: #01498F;
+    font-family: 'Montserrat', sans-serif;
+    color: #DFE0E2;
 }
 
-li{
+li {
     list-style-type: none;
 }
 
 
-p{
+p {
     margin: 0;
     padding: 0;
 }
 
-.container{
+.container {
     max-width: 1250px;
     padding: 0 10px;
     margin: 0 auto;
 }
 
-h1{
+h1 {
     margin: 0;
     padding: 0;
     line-height: inherit;
     font-size: inherit;
+}
+
+body {
+    padding-top: 106px;
 }

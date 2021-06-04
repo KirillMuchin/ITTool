@@ -1,133 +1,204 @@
-﻿@import "_vars.scss";
-@import "_libs.scss";
-@import "_fonts.scss";
-@import "_global.scss";
-.header {
-    background-color: #6953BC;
+﻿@import "vars";
+@import "libs";
+@import "fonts";
+@import "global";
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: #0f121a;
 }
-.header__account-row{
-    width:100%;
-    display:inline-flex;
-    justify-content:space-between;
-    margin-top:15px;
+
+.header__inner {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    height: 106px;
+    padding-top: 30px;
 }
-.logo{
-    margin-left:105px;
+
+.menu__list * {
+    display: inline;
 }
-.header__links-row{
-    margin-left:105px;
-    margin-top:7px;
+
+.menu {
+    padding-top: 13px;
 }
-.header__account-login{
-    display:inline;
-    font-weight:600;
+
+.menu__item {
+    padding: 0px 40px;
 }
-.header__account {
-    margin-right: 65px;
-    padding-top: 15px;
+
+.portal-link {
+    color: #ff700a;
+    padding: 10px;
+    border: 2px solid #ff700a;
+    border-radius: 100px;
 }
-.account__login-link{
-    font-size:18px;
-    color:white;
-    margin-right:50px;
+
+.main__offer-inner {
+    padding-bottom: 100px;
 }
-.header__links-link{
-    color:white;
-    margin-right:30px;
-    font-weight:700;
+
+.main__offer-inner {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
 }
-.footer {
-    background: linear-gradient(90deg, #4F38BE 27.72%, #6B1096 41.12%, #6B1096 59.02%, #4B3DC3 73.14%);
-    color: white;
+
+.offer__text {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.offer__text-text {
+    margin-bottom: 36px;
+    font-size: 42px;
+    font-weight: 700;
+    max-width: 477px;
+}
+
+.offer__text-header {
+    font-weight: 800;
+    color: #167f8d;
+}
+
+.offer__link {
+    max-width: 343px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.main__about {
+    text-align: center;
+    background-color: #dfe0e2;
+    padding-top: 50px;
+}
+
+.main__about-header {
+    @extend %h1-section-header;
+    color: #ff700a;
+    margin-bottom: 10px;
+}
+
+.main__about-subheader {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 40px;
+    color: #0f121a;
+    max-width: 810px;
+    margin: 0 auto;
+}
+
+.main__about-inner {
+    width: 1000px;
+    height: 330px;
+    display: inline-flex;
+    justify-content: space-around;
+    margin-top: 35px;
+    padding: 20px;
+}
+
+.main__about-item {
+    height: 65%;
+    width: 20%;
+}
+
+.main__about-item:hover {
+    cursor: pointer;
+}
+
+.about__item-image {
+    padding: 60px;
+    background-color: #0f121a;
+    border-radius: 15px;
+}
+
+.about__item-header {
+    width: 190px;
+    text-align: center;
+    font-size: 18px;
+    color: #0f121a;
+    margin-top: 15px;
+}
+
+.about__info-text {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #0f121a;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    display: none;
+}
+
+.main__courses {
+    padding-top: 50px;
+    height: 900px;
+}
+
+.main__courses-header {
+    @extend %h1-section-header;
+    margin-left: 25px;
+}
+
+.main__contact {
+    background-color: #dfe0e2;
+    padding-top: 35px;
 
     a {
-        color: white;
-        margin-left:0;
-        margin-bottom:15px;
+        color: #0f121a;
     }
-    p{
-        margin-bottom:20px;
-        font-weight:600;
-    }
-    padding-top: 50px;
-    border-radius: 30% 30% 0 0;
-}
-.footer__inner{
-    width:100%;
-    display:inline-flex;
-    justify-content:space-between;
-    padding:0 30px;
-}
-.footer__ittool,
-.footer__more,
-.footer__links
-{
-    display:inline-flex;
-    flex-direction:column;
-}
-.login {
-    background: linear-gradient(270.06deg, #4A3EC4 0.09%, #6B1096 25.24%, #6B1096 72.56%, #4B3DC3 99.98%);
-    min-height:100vh;
-    padding-bottom:20px;
+
+    padding-bottom: 20px;
 }
 
+.main__contact-header {
+    @extend %h1-section-header;
+    color: #ff700a;
+    margin-bottom: 70px;
+}
+
+.main__contact-inner {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.main__contact-soc {
+    margin-top: 44px;
+    margin-left: 10px;
+
+    a {
+        margin-right: 30px;
+    }
+}
+
+.main__contact-email {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.contact__logo-img {
+    margin-bottom: 37px;
+}
+
+.main__contact-errors {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.main__contact-licens {
+    margin-top: 106px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: rgba(15, 18, 26, 0.4);
+}
 .login__logo{
     text-align:center;
-    margin-left:0;
-    padding-top:72px;
-    margin-bottom:90px;
-}
-.login__form {
-    text-align: center;
-    max-width: 550px;
     margin: 0 auto;
-    form {
-        padding: 65px 75px 40px;
-        background-color: white;
-        border-radius:20px;
-        h4{
-            font-size:25px;
-            font-weight:600;
-            margin-bottom:75px;
-        }
-        label{
-            display:none;
-        }
-        span{
-            display:none;
-        }
-
-    }
-}
-.login__form-control{
-    margin-bottom:75px;
-    border:none;
-    border-bottom: 2px solid black;
-    width:400px;
-    outline:none;
-}
-
-.login__form-btn {
-    width: 400px;
-    background-color: black;
-    color: white;
-    font-size: 20px;
-    font-weight: 700;
-    border: none;
-    border-radius: 5px;
-    height: 50px;
-}
-.login__form-forget {
-    margin-top: 50px;
-    font-size: 15px;
-    color: #A59898;
-}
-.login__form-register {
-    font-size: 15px;
-    color:white;
-    margin-top:30px;
-    a{
-        color:white;
-        font-weight:700;
-    }
 }

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using ITToolTest.Models;
 
 namespace ITToolTest.Data
 {
@@ -12,5 +13,6 @@ namespace ITToolTest.Data
             : base(options)
         {
         }
+        public DbSet<ITToolTest.Models.Course> Course { get; set; }
     }
 }
