@@ -1,11 +1,12 @@
-﻿
+﻿@using Microsoft.AspNetCore.Identity
+
 @{
     Layout = "_LayoutPortal";
 }
 
 <section class="portal__main">
     <div class="portal__main-header">
-        <h3 class="main__header-hello"></h3>
+        <h3 class="main__header-hello">Привет, @User.Identity.Name</h3>
         <img src="" alt="" class="main__header-notification">
     </div>
     <div class="main__inner-left">
