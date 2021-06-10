@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Courses>;
+@{
+    Layout = "_LayoutPortal";
+}
+
+<a asp-controller="Courses" asp-action="Index">Добавить курс</a>
+@foreach (var course in Model)
+{
+    <p>Вы проходите курс @Html.DisplayFor(x => course.Name)</p>
+}

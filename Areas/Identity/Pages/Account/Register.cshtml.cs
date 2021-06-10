@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using ITToolTest.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -13,12 +14,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using ITToolTest.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ITToolTest.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class RegisterModel : PageModel
     {
+        private readonly ApplicationDbContext _context ;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
@@ -28,12 +32,14 @@ namespace ITToolTest.Areas.Identity.Pages.Account
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _context = context;
         }
 
         [BindProperty]
@@ -75,9 +81,13 @@ namespace ITToolTest.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+                var localUser = new User() {Name = Input.Email.Split("@")[0], AspNetUsersId = user.Id};
+                _context.User.Add(localUser);
+                RedirectToAction("Create", "UsersController", localUser);
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -90,6 +100,8 @@ namespace ITToolTest.Areas.Identity.Pages.Account
 
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
+                    
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {

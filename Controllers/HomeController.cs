@@ -13,19 +13,19 @@ namespace ITToolTest.Controllers
 {
     public class HomeController : Controller
     {
-        private OurCoursesController ourCoursesController;
+        private CoursesController CoursesController;
 
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, OurCoursesController coursesController)
+        public HomeController(ILogger<HomeController> logger, CoursesController coursesController)
         {
             _logger = logger;
-            ourCoursesController = coursesController;
+            CoursesController = coursesController;
         }
 
         public IActionResult Index()
         {
-            var dataCourses = ourCoursesController.GetData();
+            var dataCourses = CoursesController.GetData();
             return View(dataCourses);
         }
 
