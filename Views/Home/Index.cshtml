@@ -11,10 +11,11 @@
                 <p class="offer__text-text">
                     <span class="offer__text-header">
                         ITtool
-                    </span> - платформа для изучения технического английского в сфере IT.
+                    </span> - personal assistant in learning Technical English.
+                    Programmers for programmers.
                 </p>
                 <a href="#" class="portal-link offer__link">
-                    Начать изучение
+                    Get started
                 </a>
             </div>
             <div class="offer-img">
@@ -25,7 +26,7 @@
 </section>
 <section class="main__about" id="main__about">
     <div class="container">
-        <p class="main__about-header">О нас...</p>
+        <p class="main__about-header">About us...</p>
         <p class="main__about-subheader">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus
             sit amet luctus venenatis, lectus magna
@@ -38,25 +39,25 @@
                 <div class="about__item-image">
                     <img src="./img/main__us.svg" alt="" class="about__item-img">
                 </div>
-                <p class="about__item-header">Чем мы занимаемся?</p>
+                <p class="about__item-header">What we do</p>
             </div>
             <div class="main__about-item " id="about-item2">
                 <div class="about__item-image">
                     <img src="./img/main__audience.svg" alt="" class="about__item-img">
                 </div>
-                <p class="about__item-header">Наша аудитория</p>
+                <p class="about__item-header">What they say</p>
             </div>
             <div class="main__about-item " id="about-item3">
                 <div class="about__item-image">
                     <img src="./img/main__benefits.svg" alt="" class="about__item-img">
                 </div>
-                <p class="about__item-header">Наши преимущества</p>
+                <p class="about__item-header">Why we're helpful</p>
             </div>
             <div class="main__about-item " id="about-item4">
                 <div class="about__item-image">
                     <img src="./img/main__methods.svg" alt="" class="about__item-img">
                 </div>
-                <p class="about__item-header">Методы изучения</p>
+                <p class="about__item-header">Study approach</p>
             </div>
         </div>
         <div class="about__info-inner">
@@ -97,7 +98,7 @@
 </section>
 <section class="main__courses" id="main__courses">
     <div class="container">
-        <p class="main__courses-header">Наши курсы</p>
+        <p class="main__courses-header">Courses</p>
         <div class="main__courses-inner">
             @foreach (var e in Model)
             {
@@ -107,8 +108,8 @@
                         <h2 class="courses__item-header">@Html.DisplayFor(x => e.Name)</h2>
                         <h4 class="courses__item-subheader">@Html.DisplayFor(x => e.Description)</h4>
                         <div class="courses__item-info">
-                            <p class="courses__item-lessons">Количество уроков:@Html.DisplayFor(x => e.LessonsCount)</p>
-                            <p class="courses__item-lvl">Сложность:@Html.DisplayFor(x => e.Level)</p>
+                            <p class="courses__item-lessons">Number of lessons:@Html.DisplayFor(x => e.LessonsCount)</p>
+                            <p class="courses__item-lvl">Complexity:@Html.DisplayFor(x => e.Level)</p>
                         </div>
                     </a>
                 </div>
