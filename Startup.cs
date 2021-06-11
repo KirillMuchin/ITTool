@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using ITToolTest.Models;
 
@@ -46,8 +47,9 @@ namespace ITToolTest
             services.AddControllersWithViews();
             services.AddScoped<CoursesController>();
             services.AddScoped<CoursesDatasController>();
-            services.AddScoped<User>();
-            services.AddScoped<UserCourse>();
+            services.AddScoped<UsersController>();
+            services.AddScoped<UserCoursesController>();
+            services.AddScoped<ClaimsPrincipal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

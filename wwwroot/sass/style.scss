@@ -348,6 +348,7 @@ div.login {
 }
 .side__list{
     text-align:left;
+    margin-top:20px;
 }
 .side__list-item{
     margin-left:47px;
@@ -359,6 +360,14 @@ div.login {
     font-size: 18px;
     line-height: 22px;
 }
+.side__item-link{
+    display:inline-flex;
+    width:200px;
+    p{
+        margin-left:20px;
+        text-align:left;
+    }
+}
 .side__inner{
     height:700px;
     display:inline-flex;
@@ -367,4 +376,114 @@ div.login {
 }
 .portal__main{
     padding:40px;
+}
+
+.portal__courses {
+    padding: 30px;
+    float: left;
+    width: 70%;
+}
+
+.portal__courses_header {
+    font-weight: 600;
+    font-size: 35px;
+    color: #dfe0e2;
+    margin-bottom: 25px;
+}
+
+.portal__courses_contole {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.courses__controle_new {
+    width: 30%;
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #dfe0e2;
+    border-radius: 25px;
+}
+
+.controle__new_text {
+    color: #0f121a;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.controle__new_img {
+}
+
+.courses__controle_progress {
+    border-radius: 25px;
+    width: 30%;
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #dfe0e2;
+}
+
+.courses__progress_text {
+    color: #0f121a;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.courses__progress_img {
+}
+
+.portal__courses_inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.portal__courses_item {
+    flex: 1 1 25%;
+    min-width: 305px;
+    height: 150px;
+    padding: 14px 20px 14px;
+    background-color: #dfe0e2;
+    border: 2px solid #0c0e14;
+    flex-grow: 0; /* <-----  Самая важна часть*/
+    border-radius: 25px;
+    box-shadow: 0px 0px 0px 4px #ff700a;
+    margin-bottom: 35px;
+}
+
+
+.courses__item_header {
+    font-weight: 500;
+    font-size: 19px;
+    color: #0f121a;
+}
+
+.courses__item_discription {
+    font-weight: 500;
+    font-size: 12px;
+    color: #0f121a;
+}
+
+.courses__item_progress {
+    display: inline-flex;
+    width: 80%;
+    justify-content: space-around;
+}
+
+.item__progress-text {
+    font-weight: 500;
+    font-size: 7px;
+    color: #0f121a;
+}
+
+.item__progress_bar {
+}
+
+.item__progress_percent {
+    font-weight: 500;
+    font-size: 7px;
+    color: #0f121a;
 }

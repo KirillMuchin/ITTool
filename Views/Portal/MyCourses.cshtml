@@ -3,8 +3,40 @@
     Layout = "_LayoutPortal";
 }
 
-<a asp-controller="Courses" asp-action="Index">Добавить курс</a>
-@foreach (var course in Model)
-{
-    <p>Вы проходите курс @Html.DisplayFor(x => course.Name)</p>
-}
+<section class="portal__courses">
+    <h1 class="portal__courses_header">Мои курсы</h1>
+    <div class="portal__courses_contole">
+        <div class="courses__controle_new">
+                <p class="controle__new_text">Добавить новый курс</p>
+            <a asp-action="NewCourse"><img src="~/img/add-course.svg" alt="" class="controle__new_img"></a>
+            </div>
+
+            <div class="courses__controle_progress">
+                <p class="courses__progress_text">Мой прогресс по курсам</p>
+                <a><img src="~/img/stats.svg" alt="" class="courses__progress_img"></a>
+            </div>
+    </div>
+    <div class="portal__courses_inner">
+        @foreach (var course in Model)
+        {
+            <a class="courses__item_link" >
+            <div class="portal__courses_item" >
+                <p class="courses__item_header">
+                    @Html.DisplayFor(x => course.Name)
+                </p>
+                <p class="courses__item_discription">
+                    @Html.DisplayFor(x => course.Description)
+                </p>
+                <div class="courses__item_progress">
+                    <p class="item__progress-text">Прогресс</p>
+                    <img src="" alt="" class="item__progress_bar">
+                    <p class="item__progress_percent">
+
+                    </p>
+                </div>
+            </div>
+            </a>
+        }
+
+    </div>
+</section>
