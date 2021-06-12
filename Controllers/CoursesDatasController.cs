@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ITToolTest.Data;
 using ITToolTest.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ITToolTest
 {
+    [Authorize(Roles = "admin")]
     public class CoursesDatasController : Controller
     {
         private readonly ApplicationDbContext _context;

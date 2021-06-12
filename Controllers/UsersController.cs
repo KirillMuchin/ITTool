@@ -8,12 +8,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ITToolTest.Data;
 using ITToolTest.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using SQLitePCL;
 
 namespace ITToolTest
 {
+    [Authorize(Roles = "admin")]
     public class UsersController : Controller
     {
         private readonly ApplicationDbContext _context;

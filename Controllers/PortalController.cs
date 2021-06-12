@@ -43,14 +43,7 @@ namespace ITToolTest.Controllers
 
         public IActionResult MyCourses()
         {
-            var userId = _context.Users.FirstOrDefault(x => x.UserName == User.Identity.Name).Id;
-            var user = (_context.User.Where(x => x.AspNetUsersId == userId).ToList())[0].Id;
-            var coursesId = _context.UserCourse.Where(x => x.UserId == user).Select(x => x.CoursesId).ToList();
-            var userCourses = new List<Courses>();
-            foreach (var id in coursesId)
-            {
-                userCourses.AddRange(_context.Courses.Where(x => x.Id == id).ToList());
-            }
+            var userCourses = GetUserCoursesList();
             return View(userCourses);
         }
 
@@ -60,13 +53,43 @@ namespace ITToolTest.Controllers
             return View(dataCourses);
         }
 
-        public void AddCourseToUser(int courseId)
+        public IActionResult LearnCourse(int courseId)
+        {
+            var userCourse = GetUserCoursesList().Where(x => x.Id == courseId).First();
+            ViewData["CourseName"] = (userCourse.Name);
+            var courseData = _coursesController.GetCourseData(userCourse.Id);
+            return View(courseData);
+
+        }
+
+        public IEnumerable<Courses> GetUserCoursesList()
         {
             GetAllData();
-            var newCourse = new UserCourse() {CoursesId = courseId, UserId = localUser.Id, Progress = "0"};
-            _context.UserCourse.Add(newCourse);
-            _context.SaveChangesAsync();
-            RedirectToAction("MyCourses");
+            var userId = identityUser.Id;
+            var localUserId = localUser.Id;
+            var coursesId = _context.UserCourse.Where(x => x.UserId == localUserId).Select(x => x.CoursesId).ToList();
+            foreach (var id in coursesId)
+            {
+                yield return _context.Courses.Where(x => x.Id == id).First();
+            }
+        }
+
+        public IActionResult AddCourseToUser(int courseId)
+        {
+            GetAllData();
+            var isCourseInProgress =
+                (_context.UserCourse.Where(x => x.UserId == localUser.Id && x.CoursesId == courseId)).Any();
+            if (isCourseInProgress)
+            {
+                return Redirect("./MyCourses");
+            }
+            else
+            {
+                var newCourse = new UserCourse() { CoursesId = courseId, UserId = localUser.Id, Progress = "0" };
+                _context.UserCourse.Add(newCourse);
+                _context.SaveChangesAsync();
+            }
+            return Redirect("./MyCourses");
         }
     }
 }

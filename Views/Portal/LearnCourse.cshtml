@@ -1,0 +1,11 @@
+﻿@model IEnumerable<CoursesData>;
+@{
+    Layout = "_LayoutPortal";
+}
+<h1> @ViewData["CourseName"]</h1>
+@foreach (var data in Model)
+{
+    
+    <h2>@Html.DisplayFor(x => data.Header)</h2>
+    <p>@Html.DisplayFor(x => data.Text)</p>
+}

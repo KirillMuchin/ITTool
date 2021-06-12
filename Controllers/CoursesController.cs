@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ITToolTest.Data;
 using ITToolTest.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ITToolTest
 {
+    [Authorize(Roles = "admin")]
     public class CoursesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -41,6 +43,11 @@ namespace ITToolTest
             }
 
             return View(courses);
+        }
+
+        public List<CoursesData> GetCourseData(int courseId)
+        {
+            return _context.CoursesData.Where(x => x.CoursesId == courseId).ToList();
         }
 
         // GET: Courses/Create

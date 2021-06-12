@@ -19,7 +19,11 @@
     <div class="portal__courses_inner">
         @foreach (var course in Model)
         {
-            <a class="courses__item_link" >
+            var parms = new Dictionary<string, string>
+            {
+                {"courseId", course.Id.ToString()}
+            };
+            <a class="courses__item_link" asp-action="LearnCourse" asp-all-route-data="parms">
             <div class="portal__courses_item" >
                 <p class="courses__item_header">
                     @Html.DisplayFor(x => course.Name)
