@@ -6,6 +6,6 @@
 @foreach (var data in Model)
 {
     
-    <h2>@Html.DisplayFor(x => data.Header)</h2>
-    <p>@Html.DisplayFor(x => data.Text)</p>
+    <h2>@Html.Raw(data.Header)</h2>
+    <p>@Html.Raw(data.Text)</p>
 }
