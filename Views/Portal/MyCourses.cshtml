@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Courses>;
+﻿@using ITToolTest.Controllers
+@model IEnumerable<Courses>;
 @{
     Layout = "_LayoutPortal";
 }
@@ -33,7 +34,7 @@
                 </p>
                 <div class="courses__item_progress">
                     <p class="item__progress-text">Прогресс</p>
-                    <img src="" alt="" class="item__progress_bar">
+                    <progress class="progress-bar" value="@ViewData[course.Id.ToString()]" max ="100"></progress>
                     <p class="item__progress_percent">
 
                     </p>

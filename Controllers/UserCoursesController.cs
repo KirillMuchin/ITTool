@@ -164,5 +164,6 @@ namespace ITToolTest
         {
             return _context.UserCourse.Any(e => e.Id == id);
         }
+
     }
 }

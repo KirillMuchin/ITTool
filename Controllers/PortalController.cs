@@ -44,6 +44,11 @@ namespace ITToolTest.Controllers
         public IActionResult MyCourses()
         {
             var userCourses = GetUserCoursesList();
+            foreach (var course in userCourses)
+            {
+                var progress = GetUserProgress(course.Id);
+                ViewData[course.Id.ToString()] = progress;
+            }
             return View(userCourses);
         }
 
@@ -72,6 +77,18 @@ namespace ITToolTest.Controllers
             {
                 yield return _context.Courses.Where(x => x.Id == id).First();
             }
+        }
+
+        public string GetUserProgress(int id)
+        {
+            GetAllData();
+            var localUserId = localUser.Id;
+            var coursesId = _context.UserCourse
+                .Where(x => x.UserId == localUserId && x.CoursesId == id)
+                .Select(x => x.Progress)
+                .First();
+            return coursesId;
+
         }
 
         public IActionResult AddCourseToUser(int courseId)
