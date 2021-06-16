@@ -2,10 +2,20 @@
 @{
     Layout = "_LayoutPortal";
 }
-<h1> @ViewData["CourseName"]</h1>
-@foreach (var data in Model)
-{
-    
-    <h2>@Html.Raw(data.Header)</h2>
-    <p>@Html.Raw(data.Text)</p>
-}
+<h1 class="course__name"> @ViewData["CourseName"]</h1>
+<section class="course__learn">
+    @foreach (var data in Model)
+    {
+        <div class="course__theme_header">
+            @Html.Raw(data.Header)
+        </div>
+        <div class="course__theme_text">
+            @Html.Raw(data.Text)
+        </div>
+        @if (data.ImgName != null)
+        {
+            <img src="~/img/@data.ImgName" class="course__theme_img" />
+        }
+
+    }
+</section>

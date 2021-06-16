@@ -125,6 +125,9 @@ header {
     }
 }
 
+.about__info-inner{
+    padding-bottom:20px;
+}
 .about__info-item {
     display: none;
 }
@@ -284,8 +287,11 @@ div.login {
     margin-bottom: 48px;
 }
 
-.main__courses-inner{
-    display:inline-flex;
+.main__courses-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px 0px;
+    grid-template-areas: ". . ." ". . ." ". . .";
 }
 
 .main__courses-item {
@@ -503,4 +509,10 @@ div.login {
     font-weight: 500;
     font-size: 7px;
     color: #0f121a;
+}
+
+.course__theme_img{
+    max-width:800px;
+    max-height:800px;
+    margin:30px;
 }

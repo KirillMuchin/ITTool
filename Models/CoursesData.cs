@@ -14,6 +14,7 @@ namespace ITToolTest.Models
         public string Header { get; set; }
         public string Text { get; set; }
         public int CoursesId { get; set; }
+        public string ImgName { get; set; }
         
         public virtual Courses Courses1 { get; set; }
     }

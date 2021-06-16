@@ -59,7 +59,7 @@ namespace ITToolTest
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Header,Text,CoursesId")] CoursesData coursesData)
+        public async Task<IActionResult> Create([Bind("Id,Header,Text,CoursesId, ImgName")] CoursesData coursesData)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +93,7 @@ namespace ITToolTest
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Header,Text,CoursesId")] CoursesData coursesData)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Header,Text,CoursesId, ImgName")] CoursesData coursesData)
         {
             if (id != coursesData.Id)
             {
