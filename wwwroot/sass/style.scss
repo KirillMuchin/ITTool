@@ -422,6 +422,7 @@ div.login {
 }
 
 .courses__controle_new {
+    min-width:305px;
     width: 30%;
     display: inline-flex;
     justify-content: space-between;
@@ -441,6 +442,7 @@ div.login {
 
 .courses__controle_progress {
     border-radius: 25px;
+    min-width:305px;
     width: 30%;
     display: inline-flex;
     justify-content: space-between;
