@@ -115,6 +115,19 @@ header {
     cursor: pointer;
 }
 
+.tab.active{
+    display:block;
+}
+
+.button.active-button{
+    p{
+        color:#ff700a;
+    }
+}
+
+.about__info-item {
+    display: none;
+}
 .about__item-image {
     padding: 60px;
     background-color: #0f121a;
@@ -136,7 +149,7 @@ header {
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
-    display: none;
+
 }
 
 .main__courses {
