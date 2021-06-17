@@ -1,4 +1,6 @@
 ﻿
+
+
 class TabList {
     constructor(buttonsContainer, tabs) {
         this.buttonsContainer = buttonsContainer;
@@ -25,3 +27,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const tabList = new TabList(buttonsContainer, tabs);
 })
+
+

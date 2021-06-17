@@ -13,7 +13,8 @@ function cleanDist() {
 }
 
 function styles() {
-    return src('wwwroot/sass/style.scss')
+    return src('wwwroot/sass/style.scss',
+            'node_modules/@splidejs/splide/dist/css/splide.min.css')
         .pipe(scss({ outputStyle: 'compressed' }))
         .pipe(concat('style.min.css'))
         .pipe(autoprefixer({
